@@ -9,4 +9,5 @@ public interface GameDAO {
     List<Game> getGames(Connection conn) throws SQLException;
     Game findGameById(Connection conn, int idG) throws SQLException;
     void insertGame(Connection conn, Game game) throws SQLException;
+    
 }

@@ -63,37 +63,42 @@
                         <h2>${game.nome}</h2>
                     <br>
                     <div class="col-md-4">
-                        <img src="images/img_${game.idG}.jpg" class="img-rounded img-responsive">
+                        <img src="images/img_${game.nome}.jpg" class="img-rounded img-responsive">
                     </div>
                     <div class="col-md-8">
-                    <ul>
-                        <li>Descrizione <b>${game.descr}</b></li>
-                        <li>Genere <b>${game.genere}</b></li>
-                    </ul>
+                        Descrizione <b>${game.descr}</b><hr>
+                        Genere <b>${game.genere}</b>
                     
                     </div>
-                    
-                </div>
-                </div>
-                <div class="row">
-                     <br>
-                    <div class="col-md-8 col-md-offset-2">
                         <form action="gameSession" method="get">
                             <input type="hidden" value="${game.idG}" name="idG">
                             <input type="submit" value= "Gioca" class="btn btn-block btn-sm btn-primary">
                         </form>
-                    </div>
-
-                </div><hr>
+                </div>
+                </div>
+                <div class="row">
+                     <br>
+                </div>
+                <hr>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h4>Achievements</h4>
+                        <h3>Achievements</h3>
+                        <c:if test = "${achisEmpty == true}">
+                            <div class="alert alert-warning">
+                                Non sono presenti achievements
+                            </div>  
+                        </c:if>
+                        
+                        
                     <c:forEach items="${achis}" var="achi">
-                    <div class="item">
-                        <ul>
-                            <li>Nome <b>${achi.nome}</b></li>
-                            <li>Descr <b>${achi.descr}</b></li>
-                        </ul>
+                        <hr>
+                    <div class="item col-md-8">
+                            <b>${achi.nome}</b>
+                            ${achi.descr}
+                    </div>
+                    <div class="item col-md-4">
+                            <b>${achi.premioXP} XP</b>
+                            
                     </div>
                     </c:forEach>
                     </div>
@@ -102,7 +107,12 @@
             <!-- RECENSIONI -->
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h4>Recensioni</h4>
+                    <h3>Recensioni</h3>
+                    <c:if test = "${revsEmpty == true}">
+                            <div class="alert alert-warning">
+                                Non sono presenti recensioni
+                            </div>  
+                        </c:if>
                 <c:forEach items="${revs}" var="rev">
                     <div class="item">
                         <b>${rev.user.userName}</b> voto <b>${rev.voto}/5</b><br>

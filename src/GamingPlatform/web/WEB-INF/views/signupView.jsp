@@ -89,12 +89,13 @@
                                                         <h2>Signup</h2>
 							<div class="fh5co-pricing-table">
 								<ul class="fh5co-pricing-table">
+                                                                        <li class="fh5co-include"><input type="text" class="form-control" name="userName" placeholder="UserName" required></li>
                                                                         <br>
 									<li class="fh5co-include"><input type="password" class="form-control" name="password" placeholder="Password" required></li>
                                                                         <br>
 									<li class="fh5co-include"><input type="text" class="form-control" name="nome" placeholder="Nome" required></li>
                                                                         <br>
-                                                                        <li class="fh5co-include"><input type="text" class="form-control" name="cognome" placeholder="Password" required></li>
+                                                                        <li class="fh5co-include"><input type="text" class="form-control" name="cognome" placeholder="Cognome" required></li>
 								</ul>
 								<input type="submit" value= "SignIn" class="btn btn-block btn-sm btn-primary">
 							</div>

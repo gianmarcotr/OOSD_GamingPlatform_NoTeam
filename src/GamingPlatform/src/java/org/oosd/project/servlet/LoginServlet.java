@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import org.oosd.project.beans.Owners;
 
  
 import org.oosd.project.beans.User;
@@ -43,7 +44,10 @@ public class LoginServlet extends HttpServlet {
        
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
+        String ownerString = request.getParameter("owner");
+        boolean ownerBoolean = "Y".equals(ownerString);
         User user = null;
+        Owners owner = null;
         boolean hasError = false;
         String errorString = null;
        
@@ -53,11 +57,20 @@ public class LoginServlet extends HttpServlet {
         }else{
             Connection conn = MyUtils.getStoredConnection(request);
             try{
-                user = User.findUser(conn, userName, password);
-                if (user == null){
-                    hasError = true;
-                    errorString = "User Name or password invalid";
+                if(ownerBoolean){
+                   owner = Owners.findOwner(conn, userName, password);
+                    if(owner == null){
+                        hasError = true;
+                    }
                 }
+                else{
+                    user = User.findUser(conn, userName, password);
+                    if (user == null){
+                        hasError = true;
+                        errorString = "User Name or password invalid";
+                    }
+                }
+                
             }catch(SQLException e){
                     e.printStackTrace();
                     hasError = true;
@@ -78,7 +91,10 @@ public class LoginServlet extends HttpServlet {
         //e reindirizzo alla profile page dell'utente
         else{
             HttpSession session = request.getSession();
-            MyUtils.storeLoginedUser(session, user);
+            if(ownerBoolean)
+                MyUtils.storeLoginedOwner(session, owner);
+            else
+                MyUtils.storeLoginedUser(session, user);
             //redirect to userInfo page
             response.sendRedirect(request.getContextPath() + "/home");
         }

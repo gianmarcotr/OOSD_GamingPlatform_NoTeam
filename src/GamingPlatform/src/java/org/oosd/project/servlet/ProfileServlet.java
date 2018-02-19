@@ -42,7 +42,13 @@ public class ProfileServlet extends HttpServlet {
                 else
                     userAchiInCompleted.add(ua);
             }
+            if(userAchiCompleted.isEmpty()==true){
+                request.setAttribute("completedEmpty", true);
+            }
             
+            if(userAchiInCompleted.isEmpty()==true){
+                request.setAttribute("incompletedEmpty", true);
+            }
             request.getSession().setAttribute("user", loginedUser);
             request.setAttribute("userAchiC", userAchiCompleted);
             request.setAttribute("userAchiI", userAchiInCompleted);

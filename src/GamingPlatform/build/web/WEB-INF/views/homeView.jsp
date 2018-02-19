@@ -76,9 +76,9 @@
                                  <form method="GET" action="game" id="${game.idG}">
                                      <input type="hidden" name="idG" value="${game.idG}">
                                     <div class="animate-box">
-                                        <a href="javascript:document.getElementById('${game.idG}').submit()"><img src="images/img_${game.idG}.jpg"></a>
+                                        <a href="javascript:document.getElementById('${game.idG}').submit()"><img src="images/img_${game.nome}.jpg"></a>
                                     </div>
-                                        <div class="fh5co-desc"><b> ${game.nome}</b></div>
+                                        <div class="fh5co-desc"><b> ${game.nome}</b> ${game.genere}</div>
                                     </form>
                             </div>
                         </c:forEach>

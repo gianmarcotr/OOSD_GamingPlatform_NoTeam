@@ -3,7 +3,7 @@
 
         <!-- MENU -->
         <div id="fh5co-offcanvass">
-		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu ${user.userName} <i class="icon-cross"></i> </a>
+		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu ${user.userName} ${owner.userName}<i class="icon-cross"></i> </a>
 		<h1 class="fh5co-logo"><a class="navbar-brand" href="home">Gaming Platform</a></h1>
 		<ul>
 			<li class="active"><a href="home">Home</a></li>
@@ -27,9 +27,16 @@
                                     <li><a href="javascript:document.getElementById('ff').submit()">LogOut</a></li>
                                 </form>
                             </c:when>
-                            <c:when test = "${user == null}">
+                            <c:when test = "${owner != null}">
+                                <li><a href="profileOwner"> ${owner.userName}</a></li>
+                                <form method="POST" action="logout" id="ff">
+                                    <li><a href="javascript:document.getElementById('ff').submit()">LogOut</a></li>
+                                </form>
+                            </c:when>
+                            <c:when test = "${user == null && owner == null}">
                                  <li><a href="login">Login</a></li>  
                                  <li><a href="signup">Sign-up</a></li>  
+                                 <li><a href="signupOwner">Sign-up Owner</a></li>  
                             </c:when>
                             
                         </c:choose>

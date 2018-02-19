@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Interface name="AchievementDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="getAchievementsByGame" returnType="List&lt;Achievements&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="findAchievementById" returnType="Achievements" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idA"/>
+        </Method>
+        <Method name="insertAchievements" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="GameDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="697.0" yPosition="368.0">
+      <Methods>
+        <Method name="getGames" returnType="List&lt;Game&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="findGameById" returnType="Game" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="insertGame" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="GameSessionDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="20.0" yPosition="186.0">
+      <Methods>
+        <Method name="getSessionByUserGame" returnType="List&lt;GameSession&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertGameSession" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="OwnerDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="22.0" yPosition="321.0">
+      <Methods>
+        <Method name="findOwner" returnType="Owners" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Password"/>
+        </Method>
+        <Method name="findOwner" returnType="Owners" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="insertOwner" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Owners" name="user"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ReviewDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="633.0" yPosition="186.0">
+      <Methods>
+        <Method name="getReviewByGame" returnType="List&lt;Review&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="insertReview" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Review" name="rev"/>
+        </Method>
+        <Method name="getReviewOnHold" returnType="List&lt;Review&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="acceptReview" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idR"/>
+        </Method>
+        <Method name="rejectReview" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idR"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="UserAchievementDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="20.0" yPosition="476.0">
+      <Methods>
+        <Method name="getUserAchi" returnType="List&lt;UserAchievement&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getUserAchiByGame" returnType="List&lt;UserAchievement&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertUserAchi" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="updateUserAchi" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="UserAchievement" name="userAchi"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="UserDAO" package="org.oosd.project.utils.DAO.interfaces" visibility="public" xPosition="574.0" yPosition="20.0">
+      <Methods>
+        <Method name="findUser" returnType="User" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="findUser" returnType="User" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="updateUser" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="insertUser" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Achievements" package="org.oosd.project.beans" visibility="public" xPosition="28.0" yPosition="162.0">
+      <Fields>
+        <Field name="userAchievementCollection" type="Collection&lt;UserAchievement&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idA" type="Integer" visibility="private"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="descr" type="String" visibility="private"/>
+        <Field name="punti" type="Integer" visibility="private"/>
+        <Field name="premioXP" type="Integer" visibility="private"/>
+        <Field name="gioco" type="Game" visibility="private"/>
+        <Field name="achiDao" type="AchievementDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idA"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="descr"/>
+          <Argument type="int" name="punti"/>
+          <Argument type="int" name="premioXP"/>
+          <Argument type="Game" name="game"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getIdA" returnType="Integer" visibility="public"/>
+        <Method name="setIdA" returnType="void" visibility="public">
+          <Argument type="Integer" name="idA"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getDescr" returnType="String" visibility="public"/>
+        <Method name="setDescr" returnType="void" visibility="public">
+          <Argument type="String" name="descr"/>
+        </Method>
+        <Method name="getPunti" returnType="Integer" visibility="public"/>
+        <Method name="setPunti" returnType="void" visibility="public">
+          <Argument type="Integer" name="punti"/>
+        </Method>
+        <Method name="getPremioXP" returnType="Integer" visibility="public"/>
+        <Method name="setPremioXP" returnType="void" visibility="public">
+          <Argument type="Integer" name="premioXP"/>
+        </Method>
+        <Method name="getGioco" returnType="Game" visibility="public"/>
+        <Method name="setGioco" returnType="void" visibility="public">
+          <Argument type="Game" name="gioco"/>
+        </Method>
+        <Method name="getAchievementsByGame" returnType="List&lt;Achievements&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="findAchievementsById" returnType="Achievements" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idA"/>
+        </Method>
+        <Method name="insertAchievements" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getUserAchievementCollection" returnType="Collection&lt;UserAchievement&gt;" visibility="public"/>
+        <Method name="setUserAchievementCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;UserAchievement&gt;" name="userAchievementCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Game" package="org.oosd.project.beans" visibility="public" xPosition="676.0" yPosition="162.0">
+      <Fields>
+        <Field name="gameSessionCollection" type="Collection&lt;GameSession&gt;" visibility="private"/>
+        <Field name="reviewCollection" type="Collection&lt;Review&gt;" visibility="private"/>
+        <Field name="achievementsCollection" type="Collection&lt;Achievements&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idG" type="Integer" visibility="private"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="descr" type="String" visibility="private"/>
+        <Field name="genere" type="String" visibility="private"/>
+        <Field name="Owner" type="String" visibility="private"/>
+        <Field name="gameDao" type="GameDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idG"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="descr"/>
+          <Argument type="String" name="genere"/>
+          <Argument type="String" name="owner"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getIdG" returnType="Integer" visibility="public"/>
+        <Method name="setIdG" returnType="void" visibility="public">
+          <Argument type="Integer" name="idG"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getDescr" returnType="String" visibility="public"/>
+        <Method name="setDescr" returnType="void" visibility="public">
+          <Argument type="String" name="descr"/>
+        </Method>
+        <Method name="getGenere" returnType="String" visibility="public"/>
+        <Method name="setGenere" returnType="void" visibility="public">
+          <Argument type="String" name="genere"/>
+        </Method>
+        <Method name="getOwner" returnType="String" visibility="public"/>
+        <Method name="setOwner" returnType="void" visibility="public">
+          <Argument type="String" name="owner"/>
+        </Method>
+        <Method name="getGames" returnType="List&lt;Game&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="findGameById" returnType="Game" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="insertGame" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getAchievementsCollection" returnType="Collection&lt;Achievements&gt;" visibility="public"/>
+        <Method name="setAchievementsCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Achievements&gt;" name="achievementsCollection"/>
+        </Method>
+        <Method name="getReviewCollection" returnType="Collection&lt;Review&gt;" visibility="public"/>
+        <Method name="setReviewCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Review&gt;" name="reviewCollection"/>
+        </Method>
+        <Method name="getGameSessionCollection" returnType="Collection&lt;GameSession&gt;" visibility="public"/>
+        <Method name="setGameSessionCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;GameSession&gt;" name="gameSessionCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Owners" package="org.oosd.project.beans" visibility="public" xPosition="1256.0" yPosition="162.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="userName" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="handleGame" type="handleGameInterface" visibility="private" isStatic="true"/>
+        <Field name="ownerDao" type="OwnerDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUserName" returnType="String" visibility="public"/>
+        <Method name="setUserName" returnType="void" visibility="public">
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="findOwner" returnType="Owners" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="insertOwner" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Owners" name="owner"/>
+        </Method>
+        <Method name="findOwner" returnType="Owners" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="insertGame" returnType="int" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertAchievement" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="removeGame" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="removeAchievement" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="getMyGames" returnType="List&lt;Game&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Owners" name="owner"/>
+        </Method>
+        <Method name="getMyGameAchievements" returnType="List&lt;Achievements&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameSession" package="org.oosd.project.beans" visibility="public" xPosition="28.0" yPosition="785.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idGS" type="Integer" visibility="private"/>
+        <Field name="dateGS" type="Date" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="game" type="Game" visibility="private"/>
+        <Field name="gameSessionDao" type="GameSessionDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idGS"/>
+          <Argument type="Date" name="dateGS"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getIdGS" returnType="Integer" visibility="public"/>
+        <Method name="setIdGS" returnType="void" visibility="public">
+          <Argument type="Integer" name="idGS"/>
+        </Method>
+        <Method name="getDateGS" returnType="Date" visibility="public"/>
+        <Method name="setDateGS" returnType="void" visibility="public">
+          <Argument type="Date" name="dateGS"/>
+        </Method>
+        <Method name="getUser" returnType="User" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getGame" returnType="Game" visibility="public"/>
+        <Method name="setGame" returnType="void" visibility="public">
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="getSessionByUserGame" returnType="List&lt;GameSession&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertGameSession" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Review" package="org.oosd.project.beans" visibility="public" xPosition="676.0" yPosition="852.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idR" type="Integer" visibility="private"/>
+        <Field name="testo" type="String" visibility="private"/>
+        <Field name="voto" type="Integer" visibility="private"/>
+        <Field name="stato" type="Integer" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="game" type="Game" visibility="private"/>
+        <Field name="reviewDao" type="ReviewDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idR"/>
+          <Argument type="String" name="testo"/>
+          <Argument type="Integer" name="voto"/>
+          <Argument type="Integer" name="stato"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdR" returnType="Integer" visibility="public"/>
+        <Method name="setIdR" returnType="void" visibility="public">
+          <Argument type="Integer" name="idR"/>
+        </Method>
+        <Method name="getTesto" returnType="String" visibility="public"/>
+        <Method name="setTesto" returnType="void" visibility="public">
+          <Argument type="String" name="testo"/>
+        </Method>
+        <Method name="getVoto" returnType="Integer" visibility="public"/>
+        <Method name="setVoto" returnType="void" visibility="public">
+          <Argument type="Integer" name="voto"/>
+        </Method>
+        <Method name="getStato" returnType="Integer" visibility="public"/>
+        <Method name="setStato" returnType="void" visibility="public">
+          <Argument type="Integer" name="stato"/>
+        </Method>
+        <Method name="getUser" returnType="User" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getGame" returnType="Game" visibility="public"/>
+        <Method name="setGame" returnType="void" visibility="public">
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="getReviewByGame" returnType="List&lt;Review&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="insertReview" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Review" name="rev"/>
+        </Method>
+        <Method name="getReviewOnHold" returnType="List&lt;Review&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="acceptReview" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idR"/>
+        </Method>
+        <Method name="rejectReview" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idR"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="org.oosd.project.beans" visibility="public" xPosition="1256.0" yPosition="768.0">
+      <Fields>
+        <Field name="gameSessionCollection" type="Collection&lt;GameSession&gt;" visibility="private"/>
+        <Field name="userAchievementCollection" type="Collection&lt;UserAchievement&gt;" visibility="private"/>
+        <Field name="reviewCollection" type="Collection&lt;Review&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="userName" type="String" visibility="private"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="lvl" type="Integer" visibility="private"/>
+        <Field name="xp" type="Integer" visibility="private"/>
+        <Field name="moderatore" type="Integer" visibility="private"/>
+        <Field name="admin" type="Integer" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="XPnextLvl" type="int" visibility="private"/>
+        <Field name="userDao" type="UserDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="int" name="lvl"/>
+          <Argument type="int" name="XP"/>
+          <Argument type="int" name="moderatore"/>
+          <Argument type="int" name="admin"/>
+          <Argument type="String" name="password"/>
+          <Argument type="int" name="XPnextLvl"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUserName" returnType="String" visibility="public"/>
+        <Method name="setUserName" returnType="void" visibility="public">
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="setCognome" returnType="void" visibility="public">
+          <Argument type="String" name="cognome"/>
+        </Method>
+        <Method name="getLvl" returnType="Integer" visibility="public"/>
+        <Method name="setLvl" returnType="void" visibility="public">
+          <Argument type="Integer" name="lvl"/>
+        </Method>
+        <Method name="getXp" returnType="Integer" visibility="public"/>
+        <Method name="setXp" returnType="void" visibility="public">
+          <Argument type="Integer" name="xp"/>
+        </Method>
+        <Method name="getModeratore" returnType="Integer" visibility="public"/>
+        <Method name="setModeratore" returnType="void" visibility="public">
+          <Argument type="Integer" name="moderatore"/>
+        </Method>
+        <Method name="getAdmin" returnType="Integer" visibility="public"/>
+        <Method name="setAdmin" returnType="void" visibility="public">
+          <Argument type="Integer" name="admin"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getXPnextLvl" returnType="int" visibility="public"/>
+        <Method name="setXPnextLvl" returnType="void" visibility="public">
+          <Argument type="int" name="XPnextLvl"/>
+        </Method>
+        <Method name="findUser" returnType="User" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="findUser" returnType="User" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="updateUser" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="insertUser" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getReviewCollection" returnType="Collection&lt;Review&gt;" visibility="public"/>
+        <Method name="setReviewCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Review&gt;" name="reviewCollection"/>
+        </Method>
+        <Method name="getUserAchievementCollection" returnType="Collection&lt;UserAchievement&gt;" visibility="public"/>
+        <Method name="setUserAchievementCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;UserAchievement&gt;" name="userAchievementCollection"/>
+        </Method>
+        <Method name="getGameSessionCollection" returnType="Collection&lt;GameSession&gt;" visibility="public"/>
+        <Method name="setGameSessionCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;GameSession&gt;" name="gameSessionCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserAchievement" package="org.oosd.project.beans" visibility="public" xPosition="27.0" yPosition="1254.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="userAchievementPK" type="UserAchievementPK" visibility="protected"/>
+        <Field name="punteggio" type="Integer" visibility="private"/>
+        <Field name="completed" type="Integer" visibility="private"/>
+        <Field name="user1" type="User" visibility="private"/>
+        <Field name="achievements" type="Achievements" visibility="private"/>
+        <Field name="userAchiDao" type="UserAchievementDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="UserAchievementPK" name="userAchievementPK"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="int" name="achi"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUserAchievementPK" returnType="UserAchievementPK" visibility="public"/>
+        <Method name="setUserAchievementPK" returnType="void" visibility="public">
+          <Argument type="UserAchievementPK" name="userAchievementPK"/>
+        </Method>
+        <Method name="getPunteggio" returnType="Integer" visibility="public"/>
+        <Method name="setPunteggio" returnType="void" visibility="public">
+          <Argument type="Integer" name="punteggio"/>
+        </Method>
+        <Method name="getCompleted" returnType="Integer" visibility="public"/>
+        <Method name="setCompleted" returnType="void" visibility="public">
+          <Argument type="Integer" name="completed"/>
+        </Method>
+        <Method name="getUser1" returnType="User" visibility="public"/>
+        <Method name="setUser1" returnType="void" visibility="public">
+          <Argument type="User" name="user1"/>
+        </Method>
+        <Method name="getAchievements" returnType="Achievements" visibility="public"/>
+        <Method name="setAchievements" returnType="void" visibility="public">
+          <Argument type="Achievements" name="achievements"/>
+        </Method>
+        <Method name="getUserAchi" returnType="List&lt;UserAchievement&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="insertUserAchi" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="getUserAchiByGame" returnType="List&lt;UserAchievement&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="updateUserAchi" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="UserAchievement" name="userAchi"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

@@ -59,21 +59,17 @@
 	<div id="fh5co-main">
             <div class="container">
                 <div class="row">
+                    <div class="col-md-offset-2">
+                        <h3>${user.userName}</h3>
+                    Livello <b>${user.lvl}</b>
+                    Punti XP <b>${user.xp}</b>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: ${(user.xp%1000)/10}%;">${(user.xp%1000)/10}%</div>
+                        </div>
+                    </div>
                     <div class="col-md-8 col-md-offset-2">
                         <h2>${game.nome}</h2>
                         <h3>Simulazione sessione di gioco: clicca su play per completare gli obiettivi </h3>
-                        <hr>
-                        <ul>
-                            <li>Descrizione <b>${game.descr}</b></li>
-                            <li>Genere <b>${game.genere}</b></li>
-                        </ul>
-                            <c:if test="${successAchi}!= n">
-                                <div class="alert alert-success">
-                                    <strong>Success!</strong> ${successAchi}
-                                </div>
-                            </c:if>
-                                
-                        
                     </div>
                 </div><hr>
                 <div class="row">
@@ -82,12 +78,23 @@
                             <input type="hidden" value="${game.idG}" name="idG">
                             <input type="submit" class="btn btn-block btn-sm btn-primary" value="play">
                         </form>
-                    <c:forEach items="${userAchi}" var="userAchi">
-                        Obiettivo <b> ${userAchi.achievements.nome}</b> Punteggio richiesto <b>${userAchi.achievements.punti} </b> Punteggio attuale <b>${userAchi.punteggio}</b>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-success" style="width: ${(userAchi.punteggio/userAchi.achievements.punti)*100}%;"><p>${(userAchi.punteggio/userAchi.achievements.punti)*100}%</p></div>
+                            <h4> I miei progressi </h4>
+                    <c:forEach items="${userAchiI}" var="userAchi">
+                        <b> ${userAchi.achievements.nome}</b> - ${userAchi.achievements.descr}<br>Punteggio richiesto <b>${userAchi.achievements.punti} </b> Punteggio attuale <b>${userAchi.punteggio}</b> premio XP <b>${userAchi.achievements.premioXP}</b>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-warning" style="width: ${(userAchi.punteggio/userAchi.achievements.punti)*100}%;"><p>${(userAchi.punteggio/userAchi.achievements.punti)*100}%</p></div>
                             </div>
                     </c:forEach>
+                        <hr>
+                        <h4>Obiettivi Completati</h4>
+                       
+                                <c:forEach items="${userAchiC}" var="userAchi">
+                                    <b> ${userAchi.achievements.nome}</b> - ${userAchi.achievements.descr}<br>Punteggio richiesto <b>${userAchi.achievements.punti} </b> Punteggio attuale <b>${userAchi.punteggio}</b> premio XP <b>${userAchi.achievements.premioXP}</b>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" style="width: ${(userAchi.punteggio/userAchi.achievements.punti)*100}%;"><p>${(userAchi.punteggio/userAchi.achievements.punti)*100}%</p></div>
+                                    </div>
+                                </c:forEach>
+                                    <hr>
                          <form action="game" method="GET">
                             <input type="hidden" value="${game.idG}" name="idG">
                             <input type="submit" class="btn btn-block btn-sm" value="Chiudi">

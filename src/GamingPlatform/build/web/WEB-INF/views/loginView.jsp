@@ -93,6 +93,12 @@
                                                                         <br>
 									<li class="fh5co-include"><input type="password" class="form-control" name="password" placeholder="Password"></li>
 								</ul>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="owner" value="Y" id="defaultCheck1">
+                                                                <label class="form-check-label" for="defaultCheck1">
+                                                                  Accedi come Owner
+                                                                </label>
+                                                            </div>
 								<input type="submit" value= "SignIn" class="btn btn-block btn-sm btn-primary">
 							</div>
 						</div>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Achievements">
+  <ClassDiagramComponents>
+    <Class name="Achievements" package="org.oosd.project.beans" visibility="public" xPosition="20.0" yPosition="17.0">
+      <Fields>
+        <Field name="userAchievementCollection" type="Collection&lt;UserAchievement&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idA" type="Integer" visibility="private"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="descr" type="String" visibility="private"/>
+        <Field name="punti" type="Integer" visibility="private"/>
+        <Field name="premioXP" type="Integer" visibility="private"/>
+        <Field name="gioco" type="Game" visibility="private"/>
+        <Field name="achiDao" type="AchievementDAO" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idA"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="descr"/>
+          <Argument type="int" name="punti"/>
+          <Argument type="int" name="premioXP"/>
+          <Argument type="Game" name="game"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getIdA" returnType="Integer" visibility="public"/>
+        <Method name="setIdA" returnType="void" visibility="public">
+          <Argument type="Integer" name="idA"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getDescr" returnType="String" visibility="public"/>
+        <Method name="setDescr" returnType="void" visibility="public">
+          <Argument type="String" name="descr"/>
+        </Method>
+        <Method name="getPunti" returnType="Integer" visibility="public"/>
+        <Method name="setPunti" returnType="void" visibility="public">
+          <Argument type="Integer" name="punti"/>
+        </Method>
+        <Method name="getPremioXP" returnType="Integer" visibility="public"/>
+        <Method name="setPremioXP" returnType="void" visibility="public">
+          <Argument type="Integer" name="premioXP"/>
+        </Method>
+        <Method name="getGioco" returnType="Game" visibility="public"/>
+        <Method name="setGioco" returnType="void" visibility="public">
+          <Argument type="Game" name="gioco"/>
+        </Method>
+        <Method name="getAchievementsByGame" returnType="List&lt;Achievements&gt;" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="findAchievementsById" returnType="Achievements" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idA"/>
+        </Method>
+        <Method name="insertAchievements" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getUserAchievementCollection" returnType="Collection&lt;UserAchievement&gt;" visibility="public"/>
+        <Method name="setUserAchievementCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;UserAchievement&gt;" name="userAchievementCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

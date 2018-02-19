@@ -89,16 +89,26 @@
                     </div>
                     <hr>
                     <h4>I Miei Progressi</h4>
+                    <c:if test = "${incompletedEmpty == true}">
+                            <div class="alert alert-warning">
+                                Non sono presenti achievements in corso
+                            </div>  
+                        </c:if>
                     <ul>
                         <c:forEach items="${userAchiI}" var="userAchi">
                             <li> game <b>${userAchi.achievements.gioco.nome}</b> Obiettivo <b> ${userAchi.achievements.nome}</b></li> 
                             <div class="progress">
-                                <div class="progress-bar progress-bar-alert" style="width: ${(userAchi.punteggio/userAchi.achievements.punti)*100}%;"><p>${(userAchi.punteggio/userAchi.achievements.punti)*100}%</p></div>
+                                <div class="progress-bar progress-bar-warning" style="width: ${(userAchi.punteggio/userAchi.achievements.punti)*100}%;"><p>${(userAchi.punteggio/userAchi.achievements.punti)*100}%</p></div>
                             </div>
                         </c:forEach>
                     </ul>
                     <hr>
                     <h4>Obiettivi Completati</h4>
+                    <c:if test = "${completedEmpty == true}">
+                            <div class="alert alert-warning">
+                                Non sono presenti achievements completati
+                            </div>  
+                        </c:if>
                     <ul>
                         <c:forEach items="${userAchiC}" var="userAchi">
                             <li> game <b>${userAchi.achievements.gioco.nome}</b> Obiettivo <b> ${userAchi.achievements.nome}</b></li> 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="MyUtils">
+  <ClassDiagramComponents>
+    <Class name="MyUtils" package="org.oosd.project.utils" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="ATT_NAME_CONNECTION" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ATT_NAME_USER_NAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="storeConnection" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ServletRequest" name="request"/>
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="getStoredConnection" returnType="Connection" visibility="public" isStatic="true">
+          <Argument type="ServletRequest" name="request"/>
+        </Method>
+        <Method name="storeLoginedUser" returnType="void" visibility="public" isStatic="true">
+          <Argument type="HttpSession" name="session"/>
+          <Argument type="User" name="loginedUser"/>
+        </Method>
+        <Method name="storeLoginedOwner" returnType="void" visibility="public" isStatic="true">
+          <Argument type="HttpSession" name="session"/>
+          <Argument type="Owners" name="loginedOwner"/>
+        </Method>
+        <Method name="deleteLoginedUser" returnType="void" visibility="public" isStatic="true">
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="deleteLoginedOwner" returnType="void" visibility="public" isStatic="true">
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="getLoginedUser" returnType="User" visibility="public" isStatic="true">
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="getLoginedOwner" returnType="Owners" visibility="public" isStatic="true">
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="storeUserCookie" returnType="void" visibility="public" isStatic="true">
+          <Argument type="HttpServletResponse" name="response"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getUserNameInCookie" returnType="String" visibility="public" isStatic="true">
+          <Argument type="HttpServletRequest" name="request"/>
+        </Method>
+        <Method name="deleteUserCookie" returnType="void" visibility="public" isStatic="true">
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

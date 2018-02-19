@@ -32,7 +32,7 @@ public class AdminServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         String descr= request.getParameter("descr");
         String genere = request.getParameter("genere");
-        Game game = new Game(0, nome, descr, genere);
+        Game game = new Game(0, nome, descr, genere, null);
         Game.insertGame(conn, game);
         
     }

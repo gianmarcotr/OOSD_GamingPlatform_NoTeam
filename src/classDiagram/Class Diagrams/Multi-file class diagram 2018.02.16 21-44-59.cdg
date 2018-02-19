@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AchievementDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="GETACHIEV_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FIND_ACHI_BY_ID" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getAchievementsByGame" returnType="List&lt;Achievements&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="findAchievementById" returnType="Achievements" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idA"/>
+        </Method>
+        <Method name="insertAchievements" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="20.0" yPosition="483.0">
+      <Fields>
+        <Field name="GETGAMES" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FINDGAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getGames" returnType="List&lt;Game&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="findGameById" returnType="Game" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="insertGame" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameSessionDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="432.0" yPosition="432.0">
+      <Fields>
+        <Field name="GET_SESSION_USER_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_GAME_SESSION" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getSessionByUserGame" returnType="List&lt;GameSession&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertGameSession" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OwnerDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="530.0" yPosition="20.0">
+      <Fields>
+        <Field name="FINDUSERP" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FINDUSER" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERTUSER" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="findOwner" returnType="Owners" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="findOwner" returnType="Owners" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="insertOwner" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Owners" name="owner"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ReviewDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="20.0" yPosition="218.0">
+      <Fields>
+        <Field name="GET_REVIEW_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_REVIEW" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="GET_REVIEW_HOLD" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="ACCEPT_REVIEW" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="REJECT_REVIEW" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getReviewByGame" returnType="List&lt;Review&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idG"/>
+        </Method>
+        <Method name="insertReview" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Review" name="rev"/>
+        </Method>
+        <Method name="getReviewOnHold" returnType="List&lt;Review&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+        </Method>
+        <Method name="acceptReview" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idR"/>
+        </Method>
+        <Method name="rejectReview" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="int" name="idR"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserAchievementDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="432.0" yPosition="218.0">
+      <Fields>
+        <Field name="GET_USER_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="UPDATE_USER_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_USER_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getUserAchi" returnType="List&lt;UserAchievement&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getUserAchiByGame" returnType="List&lt;UserAchievement&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertUserAchi" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="updateUserAchi" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="UserAchievement" name="userAchi"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserDAOimpl" package="org.oosd.project.utils.DAO.impl" visibility="public" xPosition="556.0" yPosition="604.0">
+      <Fields>
+        <Field name="FINDUSERP" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FINDUSER" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="UPDATEUSER" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERTUSER" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="findUser" returnType="User" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="findUser" returnType="User" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="updateUser" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="insertUser" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="User" name="user"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

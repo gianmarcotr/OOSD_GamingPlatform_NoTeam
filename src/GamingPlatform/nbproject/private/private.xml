@@ -3,50 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/ProfileServlet.java</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/HomeServlet.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/ProfileServlet.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/Owners.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/handleGame/handleGameInterface.java</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/_header.jsp</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/PlayServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/signupView.jsp</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/impl/UserAchievementDAOimpl.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/conn/SQLConnUtils.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/interfaces/AchievementDAO.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/interfaces/ReviewDAO.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/impl/UserDAOimpl.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/MyUtils.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/filters/EncodingFilter.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/NewGameServlet.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/GameOwnerServlet.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/AdminServlet.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/newAchiView.jsp</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/LogoutServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/interfaces/GameSessionDAO.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/interfaces/UserDAO.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/homeView.jsp</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/GameServlet.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/newGameView.jsp</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/gameView.jsp</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/homeView.jsp</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/GameSessionServlet.java</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/LoginServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/filters/CookieFilter.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/reviewView.jsp</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/playView.jsp</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/conn/ConnectionUtils.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/interfaces/UserAchievementDAO.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/Achievements.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/NewAchiServlet.java</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/adminView.jsp</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/Review.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/UserAchievementPK.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/loginView.jsp</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/gameOwnerView.jsp</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/Achievements.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/handleGame/handleGameImpl.java</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/impl/GameDAOimpl.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/interfaces/GameDAO.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/UserAchievement.java</file>
+            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/profileOwnerView.jsp</file>
             <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/impl/AchievementDAOimpl.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/filters/JDBCFilter.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/impl/ReviewDAOimpl.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/Game.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/AdminServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/ReviewServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/web/WEB-INF/views/profileView.jsp</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/GameServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/servlet/SignupServlet.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/utils/DAO/impl/GameSessionDAOimpl.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/User.java</file>
-            <file>file:/home/gimmi/Desktop/OOSD/GamingPlatform_NoTeam/src/GamingPlatform/src/java/org/oosd/project/beans/GameSession.java</file>
         </group>
     </open-files>
 </project-private>

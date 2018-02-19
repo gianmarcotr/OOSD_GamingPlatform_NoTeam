@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="handleGameImpl" package="org.oosd.project.handleGame" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="GETACHIEV_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="GET_MY_GAMES" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSERT_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="REMOVE_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="REMOVE_ALL_ACHI_BY_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="REMOVE_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="UPDATE_GAME" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="UPDATE_ACHI" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="insertGame" returnType="int" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertAchievement" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="removeGame" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="removeAchievement" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="getMyGames" returnType="List&lt;Game&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Owners" name="owner"/>
+        </Method>
+        <Method name="getMyGameAchievements" returnType="List&lt;Achievements&gt;" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="updateGame" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="updateAchievement" returnType="void" visibility="public">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="handleGameInterface" package="org.oosd.project.handleGame" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Methods>
+        <Method name="insertGame" returnType="int" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="insertAchievement" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achievement"/>
+        </Method>
+        <Method name="getMyGames" returnType="List&lt;Game&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Owners" name="owner"/>
+        </Method>
+        <Method name="getMyGameAchievements" returnType="List&lt;Achievements&gt;" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="updateGame" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="updateAchievement" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achi"/>
+        </Method>
+        <Method name="removeGame" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="removeAchievement" returnType="void" visibility="package">
+          <Argument type="Connection" name="conn"/>
+          <Argument type="Achievements" name="achievement"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.oosd.project.handleGame.handleGameImpl" target="org.oosd.project.handleGame.handleGameInterface"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

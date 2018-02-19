@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -46,9 +47,13 @@ public class PlayServlet extends HttpServlet {
         
         try {
             game = Game.findGameById(conn, idG);
+            //
             List<UserAchievement> userAchi = UserAchievement.getUserAchiByGame(conn, loginedUser, game);
             //Simulo una sessione assegnando un punteggio casuale agli achievements dell'utente
             //Se ha raggiunto l'obiettivo, contrassegno l'achievement come completato e aggiorno il db 
+            List<UserAchievement> userAchiCompleted = new ArrayList<>();
+            List<UserAchievement> userAchiInCompleted = new ArrayList<>();
+      
             
             for(UserAchievement ua: userAchi){
                 if(ua.getCompleted()==0){
@@ -77,7 +82,15 @@ public class PlayServlet extends HttpServlet {
                 }
             }
             userAchi = UserAchievement.getUserAchiByGame(conn, loginedUser, game);
+             for(UserAchievement ua: userAchi){
+                if(ua.getCompleted()==1)
+                    userAchiCompleted.add(ua);
+                else
+                    userAchiInCompleted.add(ua);
+            }
             request.setAttribute("userAchi", userAchi);
+            request.setAttribute("userAchiC", userAchiCompleted);
+            request.setAttribute("userAchiI", userAchiInCompleted);
             request.setAttribute("game", game);
             request.setAttribute("successLvl", successLvl);
             request.setAttribute("successAchi", successAchi);

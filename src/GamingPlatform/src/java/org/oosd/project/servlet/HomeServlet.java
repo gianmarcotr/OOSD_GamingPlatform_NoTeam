@@ -3,6 +3,7 @@ package org.oosd.project.servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.oosd.project.beans.Game;
+import org.oosd.project.beans.Owners;
+import org.oosd.project.beans.Review;
  
 import org.oosd.project.utils.MyUtils;
 import org.oosd.project.beans.User;
@@ -33,15 +36,19 @@ public class HomeServlet extends HttpServlet {
         // Forward to /WEB-INF/views/homeView.jsp
         HttpSession session = request.getSession();  
         User loginedUser =  MyUtils.getLoginedUser(session);
+        Owners loginedOwner = MyUtils.getLoginedOwner(session);
+        
         Connection conn = MyUtils.getStoredConnection(request);
         List<Game> games;
         try {
             games = Game.getGames(conn);
+            
             request.setAttribute("games", games);
         } catch (SQLException ex) {
             Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         request.getSession().setAttribute("user", loginedUser);
+        request.getSession().setAttribute("owner", loginedOwner);
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
         dispatcher.forward(request, response);
     }

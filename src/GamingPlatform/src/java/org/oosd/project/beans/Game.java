@@ -52,13 +52,17 @@ public class Game implements Serializable {
     private String descr;
     @Column(name = "genere")
     private String genere;
+    @Column(name = "Owner")
+    private String Owner;
+    
     private static GameDAO gameDao = new GameDAOimpl();
 
-    public Game(int idG, String nome, String descr, String genere) {
+    public Game(int idG, String nome, String descr, String genere, String owner) {
         this.idG = idG;
         this.nome = nome;
         this.descr = descr;
         this.genere = genere;
+        this.Owner = owner;
     }
 
     public Game() {
@@ -95,6 +99,13 @@ public class Game implements Serializable {
 
     public void setGenere(String genere) {
         this.genere = genere;
+    }
+    public String getOwner() {
+        return Owner;
+    }
+
+    public void setOwner(String owner) {
+        this.Owner = owner;
     }
 
     

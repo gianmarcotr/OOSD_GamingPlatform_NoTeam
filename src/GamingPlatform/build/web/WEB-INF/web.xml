@@ -44,6 +44,26 @@
         <servlet-name>SignupServlet</servlet-name>
         <servlet-class>org.oosd.project.servlet.SignupServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignupOwnerServlet</servlet-name>
+        <servlet-class>org.oosd.project.servlet.SignupOwnerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfileOwnerServlet</servlet-name>
+        <servlet-class>org.oosd.project.servlet.ProfileOwnerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewGameServlet</servlet-name>
+        <servlet-class>org.oosd.project.servlet.NewGameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewAchiServlet</servlet-name>
+        <servlet-class>org.oosd.project.servlet.NewAchiServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GameOwnerServlet</servlet-name>
+        <servlet-class>org.oosd.project.servlet.GameOwnerServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/HomeServlet</url-pattern>
@@ -83,6 +103,26 @@
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignupOwnerServlet</servlet-name>
+        <url-pattern>/SignupOwnerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileOwnerServlet</servlet-name>
+        <url-pattern>/ProfileOwnerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewGameServlet</servlet-name>
+        <url-pattern>/NewGameServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewAchiServlet</servlet-name>
+        <url-pattern>/NewAchiServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GameOwnerServlet</servlet-name>
+        <url-pattern>/GameOwnerServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

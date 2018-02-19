@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.oosd.project.beans.Owners;
 
 import org.oosd.project.beans.User;
 
@@ -37,16 +38,30 @@ public class MyUtils {
      public static void storeLoginedUser(HttpSession session, User loginedUser){
          session.setAttribute("loginedUser", loginedUser);
      }
+     public static void storeLoginedOwner(HttpSession session, Owners loginedOwner){
+         session.setAttribute("loginedOwner", loginedOwner);
+     }
+     
      
      public static void deleteLoginedUser(HttpSession session){
          session.removeAttribute("loginedUser");
      }
+     public static void deleteLoginedOwner(HttpSession session){
+         session.removeAttribute("loginedOwner");
+     }
+     
      
        // Get the user information stored in the session.
     public static User getLoginedUser(HttpSession session) {
         User loginedUser = (User) session.getAttribute("loginedUser");
         return loginedUser;
     }
+    public static Owners getLoginedOwner(HttpSession session) {
+        Owners loginedOwner = (Owners) session.getAttribute("loginedOwner");
+        return loginedOwner;
+    }
+    
+  
     
    
     

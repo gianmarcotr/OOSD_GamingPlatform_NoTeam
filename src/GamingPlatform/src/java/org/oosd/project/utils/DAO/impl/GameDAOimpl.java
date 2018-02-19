@@ -13,7 +13,7 @@ import org.oosd.project.utils.DAO.interfaces.GameDAO;
 public class GameDAOimpl implements GameDAO {
     private static final String GETGAMES ="Select * from Game";
     private static final String FINDGAME ="Select * from Game a where a.idG = ?";
-    private static final String INSERT_GAME = "Insert into Game (idG, nome, descr, genere) values (?, ?, ?, ?)";
+    private static final String INSERT_GAME = "Insert into Game (idG, nome, descr, genere, Owner) values (?, ?, ?, ?,?)";
     @Override
     public List<Game> getGames(Connection conn) throws SQLException {
         PreparedStatement pstm;
@@ -25,7 +25,8 @@ public class GameDAOimpl implements GameDAO {
             String nome = rs.getString("nome");
             String descr = rs.getString("descr");
             String genere = rs.getString("genere");
-            Game game = new Game(id, nome, descr, genere);
+            String Owner = rs.getString("Owner");
+            Game game = new Game(id, nome, descr, genere, Owner);
             list.add(game);
         }
         return list;
@@ -42,7 +43,7 @@ public class GameDAOimpl implements GameDAO {
             String nome = rs.getString("nome");
             String descr = rs.getString("descr");
             String genere = rs.getString("genere");
-            Game game = new Game(id, nome, descr, genere);
+            Game game = new Game(id, nome, descr, genere, null);
             return game;
         }
         return null;
@@ -55,6 +56,7 @@ public class GameDAOimpl implements GameDAO {
         pstm.setString(2, game.getNome());
         pstm.setString(3, game.getDescr());
         pstm.setString(4, game.getGenere());
+        pstm.setString(5, null);
         pstm.executeUpdate();
     }
 }

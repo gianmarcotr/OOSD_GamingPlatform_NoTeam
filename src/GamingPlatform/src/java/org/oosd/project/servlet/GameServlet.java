@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.oosd.project.beans.Game;
 import org.oosd.project.beans.Achievements;
+import org.oosd.project.beans.Owners;
 import org.oosd.project.beans.Review;
 import org.oosd.project.beans.User;
 import org.oosd.project.utils.MyUtils;
@@ -42,13 +43,19 @@ public class GameServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();  
         User loginedUser =  MyUtils.getLoginedUser(session);
+        Owners loginedOwner = MyUtils.getLoginedOwner(session);
         //Se l'utente non è loggato non può accedere al dettaglio del gioco
         if(loginedUser==null){
             String error = "Accedi per continuare";
+            if(loginedOwner != null){
+                error = "Non puoi giocare con questo account";
+            }
             request.setAttribute("error", error);
             RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/home");
             dispatcher.forward(request, response);
         }
+        
+       
         else{
             String idGs = request.getParameter("idG");
             int idG = Integer.parseInt(idGs);
@@ -58,6 +65,14 @@ public class GameServlet extends HttpServlet {
                 Game game = Game.findGameById(conn, idG);
                 List<Achievements> achis = Achievements.getAchievementsByGame(conn, idG);
                 List<Review> revs = Review.getReviewByGame(conn, idG);
+                
+                if(achis.isEmpty()==true){
+                    request.setAttribute("achisEmpty", true);
+                }
+                if(revs.isEmpty()==true){
+                    request.setAttribute("revsEmpty", true);
+                }
+                
                 request.setAttribute("game", game);
                 request.setAttribute("achis", achis);
                 request.setAttribute("revs", revs);

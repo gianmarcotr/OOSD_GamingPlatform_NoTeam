@@ -3,6 +3,7 @@ package org.oosd.project.servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -52,8 +53,18 @@ public class GameSessionServlet extends HttpServlet {
             GameSession.insertGameSession(conn, loginedUser, game);
             //recupero gli obiettivi in corso dell'utente
             List<UserAchievement> userAchi = UserAchievement.getUserAchiByGame(conn, loginedUser, game);
-            
+            List<UserAchievement> userAchiCompleted = new ArrayList<>();
+            List<UserAchievement> userAchiInCompleted = new ArrayList<>();
+            for(UserAchievement ua: userAchi){
+                if(ua.getCompleted()==1)
+                    userAchiCompleted.add(ua);
+                else
+                    userAchiInCompleted.add(ua);
+            }
+
             request.setAttribute("userAchi", userAchi);
+            request.setAttribute("userAchiC", userAchiCompleted);
+            request.setAttribute("userAchiI", userAchiInCompleted);
             request.setAttribute("game", game);
             RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/playView.jsp");
             dispatcher.forward(request, response);

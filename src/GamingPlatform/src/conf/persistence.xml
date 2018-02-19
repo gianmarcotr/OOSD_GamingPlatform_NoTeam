@@ -8,6 +8,7 @@
     <class>org.oosd.project.beans.Review</class>
     <class>org.oosd.project.beans.UserAchievement</class>
     <class>org.oosd.project.beans.GameSession</class>
+    <class>org.oosd.project.beans.Owners</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/GamingPlatformDB?zeroDateTimeBehavior=convertToNull"/>
